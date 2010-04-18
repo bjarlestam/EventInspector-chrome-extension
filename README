@@ -1,2 +1,6 @@
 A chrome extension that lets you inspect the events attached to an element on a webpage
 
+To install the extension: 
+ - point your chrome browser to chrome://extesions
+ - click Load unpacked extension...
+
