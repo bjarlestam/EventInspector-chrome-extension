@@ -6,6 +6,12 @@ function DISPLAY_EVENTS(top, left) { return 'jQuery("#eventFinder_popup").remove
 var MARKED_ELEMENTS_CSS = '.eventFinder_hasEvent {background-color: #FF00EE;}\n .eventFinder_hasEvent:hover {border: 2px solid #002FFF;}';
 var POPUP_CSS = '#eventFinder_popup {background: #CCE1E3; border: 3px solid #2E6E75; color: #000; font-family:arial; font-size:15px; z-index:2000; position:absolute; top 60px; left:50px; padding:30px; width:700px;-webkit-border-radius:20px;-moz-border-radius:20px;border-radius:20px;} \n #eventFinder_close {background:#FFF; width:30px; text-align:center; position:absolute; right:10px; top:10px; cursor:pointer;}';
 
+var sc = DISPLAY_EVENTS(100, 100);
+
+
+function escapeHtml(str) {
+    return str.replace(/</g, '&lt;').replace(/>/g,'&gt;');
+}
 
 
 function injectScript(scr ,id) {
