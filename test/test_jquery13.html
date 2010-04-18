@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Test page with jQuery 1.4 events</title>
+<script type="text/javascript" src="jquery-1.4.2.js"></script>
+<script type="text/javascript">
+
+function clickEventFunction() {
+	jQuery('#message').text('click event');
+}
+
+function hoverEventFunction() {
+	jQuery('#message').text('hover event');
+}
+
+jQuery(function() {
+	
+	
+	jQuery('.clickEvent').click(clickEventFunction);
+	jQuery('.hoverEvent').hover(hoverEventFunction);
+	
+	jQuery('.clickAndHoverEvent').click(clickEventFunction);
+	jQuery('.clickAndHoverEvent').hover(hoverEventFunction);
+	
+	
+});
+ 
+</script>
+</head>
+<body>
+	
+<p><div id="message">message</div></p>
+
+<p><a href="##" class="clickEvent">click event</a></p>
+<p><a href="##" class="hoverEvent">hover event</a></p>
+<p><a href="##" class="clickAndHoverEvent">click and hover event</a></p>
+ 
+</body>
+</html>

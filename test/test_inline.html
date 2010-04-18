@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Test page with inline events</title>
+<script type="text/javascript" src="jquery-1.4.2.js"></script>
+<script type="text/javascript">
+
+
+jQuery(function() {
+	
+	jQuery("*").each(function() {
+		$this = jQuery(this);
+		if($this.attr('onclick')) {$this.addClass("eventFinder_hasOnclick");}
+		if($this.attr('onmouseover')) {$this.addClass("eventFinder_hasOnmouseover");}
+		if($this.attr('onmouseout')) {$this.addClass("eventFinder_hasOnmouseout");}
+	});
+
+	jQuery('.eventFinder_hasOnclick, .eventFinder_hasOnmouseover, .eventFinder_hasOnmouseout').css("background", "gold")
+	
+});
+ 
+</script>
+</head>
+<body>
+	
+<p><div id="message">message</div></p>
+
+<p><a href="##" onclick="alert('click');">click event</a></p>
+<p><a href="##" onmouseover="alert('mouseover');">mouseover event</a></p>
+<p><a href="##" onmouseout="alert('mouseout');">mouseout event</a></p>
+
+<p><a href="##" onclick="alert('click');" onmouseover="alert('mouseover');">click and mouseover event</a></p>
+ 
+</body>
+</html>

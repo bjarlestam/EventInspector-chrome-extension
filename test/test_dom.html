@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Test page with dom events</title>
+<script type="text/javascript" src="jquery-1.4.2.js"></script>
+<script type="text/javascript">
+
+function clickEventFunction() {
+	jQuery('#message').text('click event');
+}
+
+function hoverEventFunction() {
+	jQuery('#message').text('hover event');
+}
+
+jQuery(function() {
+	
+	var clickEventNode = document.getElementById('clickEvent');
+	
+	
+	// jQuery('.clickEvent').click(clickEventFunction);
+	// jQuery('.hoverEvent').hover(hoverEventFunction);
+	// 
+	// jQuery('.clickAndHoverEvent').click(clickEventFunction);
+	// jQuery('.clickAndHoverEvent').hover(hoverEventFunction);
+	
+	
+});
+ 
+</script>
+</head>
+<body>
+	
+<p><div id="message">message</div></p>
+
+<p><a href="##" id="clickEvent">click event</a></p>
+<p><a href="##" id="hoverEvent">hover event</a></p>
+<p><a href="##" id="clickAndHoverEvent">click and hover event</a></p>
+ 
+</body>
+</html>

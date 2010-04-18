@@ -1,0 +1,12 @@
+{
+  "name": "Event Inspector",
+  "version": "0.1",
+  "background_page": "background.html",
+  "permissions": [
+    "tabs", "http://*/*", "https://*/*"
+  ],
+  "browser_action": {
+      "name": "Inspect events",
+      "default_icon": "search.png"
+  }
+}

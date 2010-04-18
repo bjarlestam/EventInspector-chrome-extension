@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Test page with jQuery 1.4 live events</title>
+<script type="text/javascript" src="jquery-1.4.2.js"></script>
+<script type="text/javascript">
+
+function clickEventFunction() {
+	jQuery('#message').text('click event');
+}
+
+function hoverEventFunction() {
+	jQuery('#message').text('hover event');
+}
+
+jQuery(function() {
+	
+	
+	jQuery('.clickEvent').live('click',clickEventFunction);
+	jQuery('.hoverEvent').live('hover',hoverEventFunction);
+	
+	jQuery('.clickAndHoverEvent').live('click',clickEventFunction);
+	jQuery('.clickAndHoverEvent').live('hover',hoverEventFunction);
+	
+	
+	jQuery('.contextClickEvent', jQuery('#theContext')).live('click',clickEventFunction);
+	
+	// jQuery.each(jQuery(document).data('events').live, function() {
+	// 	
+	// 	console.log('type: ' + this.type + ' - ' + this.origType + 
+	// 	', selector: ' + this.selector + ' - ' + this.origHandler);
+	// 	
+	// 	jQuery(this.selector).css({background: 'gold'});
+	// 	
+	// 	// for(i in this) {
+	// 	// 	console.log(i + ' - ' + this[i]);
+	// 	// }
+	// });
+	
+	
+	function getLiveEventsFor(element) {
+		var result = '';
+		jQuery.each(jQuery(document).data('events').live, function() {
+			if(element.is(this.selector)) {
+				result += this.type + '.' + this.origType + ' - ' + this.origHandler + '\n'; 
+			}
+		});
+		return result;
+	}
+	
+	console.log(getLiveEventsFor(jQuery('.contextClickEvent')));
+	
+});
+ 
+</script>
+</head>
+<body>
+	
+<p><div id="message">message</div></p>
+
+<p><a href="##" class="clickEvent">click event</a></p>
+<p><a href="##" class="hoverEvent">hover event</a></p>
+<p><a href="##" class="clickAndHoverEvent">click and hover event</a></p>
+<p id="theContext"><a href="##" class="contextClickEvent">click event in context</a></p>
+<p><a href="##" class="contextClickEvent">click event outside context</a></p>
+ 
+</body>
+</html>
