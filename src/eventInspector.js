@@ -6,7 +6,7 @@ var DISPLAY_JQUERY_EVENTS = 'var eventFinder_events="";jQuery(".eventFinder_sele
 
 function DISPLAY_EVENTS(top, left) { return 'jQuery("#eventFinder_popup").remove();    jQuery("<div>"+eventFinder_events+"</div>").attr("id","eventFinder_popup").css({top:"'+top+'px", left:"'+left+'px"}).prependTo("body");   jQuery("<div>x</div>").attr("id","eventFinder_close").prependTo("#eventFinder_popup");jQuery("#eventFinder_close").click(function(){jQuery("#eventFinder_popup").remove(); return false;})';}
 
-var DISPLAY_JQUERY_LIVE_EVENTS = 'var eventFinder_events="hello hello"';
+var DISPLAY_JQUERY_LIVE_EVENTS = 'var eventFinder_events="";  jQuery.each(jQuery(document).data("events").live, function() {if(jQuery(".eventFinder_selected").is(this.selector)) { eventFinder_events += "<p><b>"+this.type + "." + this.origType + "</b> - " + this.origHandler+"</p>"; }});';
 
 var MARKED_ELEMENTS_CSS =   '.eventFinder_jqEvent {background-color: #FF00EE;} ' + 
                             '.eventFinder_jqEvent:hover {border: 2px solid #002FFF;} ' +
