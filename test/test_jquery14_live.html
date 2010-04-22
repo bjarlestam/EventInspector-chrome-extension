@@ -25,30 +25,6 @@ jQuery(function() {
 	
 	jQuery('.contextClickEvent', jQuery('#theContext')).live('click',clickEventFunction);
 	
-	// jQuery.each(jQuery(document).data('events').live, function() {
-	// 	
-	// 	console.log('type: ' + this.type + ' - ' + this.origType + 
-	// 	', selector: ' + this.selector + ' - ' + this.origHandler);
-	// 	
-	// 	jQuery(this.selector).css({background: 'gold'});
-	// 	
-	// 	// for(i in this) {
-	// 	// 	console.log(i + ' - ' + this[i]);
-	// 	// }
-	// });
-	
-	
-	function getLiveEventsFor(element) {
-		var result = '';
-		jQuery.each(jQuery(document).data('events').live, function() {
-			if(element.is(this.selector)) {
-				result += this.type + '.' + this.origType + ' - ' + this.origHandler + '\n'; 
-			}
-		});
-		return result;
-	}
-	
-	console.log(getLiveEventsFor(jQuery('.contextClickEvent')));
 	
 });
  

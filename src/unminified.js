@@ -47,3 +47,24 @@ jQuery("<div>"+eventFinder_events+"</div>").attr("id","eventFinder_eventList").c
 // var eventFinder_events="";jQuery(".eventFinder_selected").each(function(){var dEvents=$(this).data("events");if(!dEvents){return;}
 // for(var type in dEvents){jQuery.each(dEvents[type],function(key,handlerObj){eventFinder_events+=type+" - "+handlerObj.handler+"\n";})}});
 
+
+/*DOM events*/
+
+var eventTypes = ['onclick', 'onmouseover', 'onmouseout'];
+
+jQuery("*").each(function() {
+	$this = jQuery(this);
+	for(i in eventTypes) {
+		if($this.attr(eventTypes[i])) {$this.addClass("eventFinder_" + eventTypes[i]);}
+	}
+});
+
+var eventSelector = "";
+for(i in eventTypes) {
+	if(i>0) {eventSelector += ", "}
+	eventSelector += ".eventFinder_" + eventTypes[i];
+}
+
+jQuery(eventSelector).css("background", "lightgreen");
+
+
