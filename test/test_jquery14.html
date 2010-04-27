@@ -21,6 +21,8 @@ jQuery(function() {
 	
 	jQuery('.clickAndHoverEvent').click(clickEventFunction);
 	jQuery('.clickAndHoverEvent').hover(hoverEventFunction);
+
+	jQuery('.mouseup').mouseup(function() {alert('mouseup');});
 	
 	
 });
@@ -34,6 +36,7 @@ jQuery(function() {
 <p><a href="##" class="clickEvent">click event</a></p>
 <p><a href="##" class="hoverEvent">hover event</a></p>
 <p><a href="##" class="clickAndHoverEvent">click and hover event</a></p>
+<p><a href="##" class="mouseup">mouseup</a></p>
  
 </body>
 </html>
