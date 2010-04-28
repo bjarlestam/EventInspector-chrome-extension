@@ -22,8 +22,12 @@ jQuery(function() {
 	jQuery('.clickAndHoverEvent').click(clickEventFunction);
 	jQuery('.clickAndHoverEvent').hover(hoverEventFunction);
 
-	jQuery('.mouseup').mouseup(function() {alert('mouseup');});
+	jQuery('.mouseup').mouseup(function() {jQuery('#message').text('mouseup event');});
 	
+	jQuery('.mousedown').mousedown(function() {jQuery('#message').text('mousedown event');});
+	
+	jQuery('.focus').focus(function() {jQuery('#message').text('focus event');});
+	jQuery('.blur').blur(function() {jQuery('#message').text('blur event');});
 	
 });
  
@@ -37,6 +41,11 @@ jQuery(function() {
 <p><a href="##" class="hoverEvent">hover event</a></p>
 <p><a href="##" class="clickAndHoverEvent">click and hover event</a></p>
 <p><a href="##" class="mouseup">mouseup</a></p>
- 
+<p><a href="##" class="mousedown">mousedown</a></p>
+
+<form>
+	<input class="focus" type="text" value="" />
+	<input class="blur" type="text" value="" />
+</form>
 </body>
 </html>
