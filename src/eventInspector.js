@@ -15,7 +15,7 @@ var MARKED_ELEMENTS_CSS =   '.eventFinder_jqEvent:hover {border: 2px solid #002F
                             '.eventFinder_domEvent:hover {border: 2px solid #002FFF;}';
                             
 var POPUP_CSS = '#eventFinder_popup {background: #CCE1E3; border: 3px solid #2E6E75; color: #000; font-family:arial; font-size:15px; z-index:9999; position:absolute; padding:30px; -webkit-border-radius:20px;border-radius:20px;} ' +
-                '#eventFinder_close {background:#FFF; padding: 2px; text-align:center; position:absolute; right:10px; top:10px; cursor:pointer; -webkit-border-radius:4px;border-radius:4px;}';
+                '#eventFinder_close {background:#EEE; padding: 3px; text-align:center; position:absolute; right:10px; top:10px; cursor:pointer; -webkit-border-radius:5px;border-radius:5px;}';
 
 
 var isWindows = navigator.userAgent.toLowerCase().indexOf('windows') !== -1;
