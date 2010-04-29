@@ -1,4 +1,12 @@
-A chrome extension that lets you inspect the events attached to an element on a webpage
+A chrome extension that lets you inspect the JavaScript events attached to a webpage.
+When you push the Inspect Events button the elements with events should be highlighted.
+You can then click on the elements to get information about the events.
+
+Supports:
+ - standard dom events
+ - jQuery 1.3
+ - jQuery 1.4 including live events
+
 
 To install the extension: 
  - point your chrome browser to chrome://extesions
